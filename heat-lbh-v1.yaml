@@ -1,0 +1,39 @@
+heat_template_version: 2015-10-15
+
+description : Simple instance setup
+
+parameters:
+
+  name_instance:
+    type: string
+    label: Name of Instance
+    description: Name of Instance
+  image_id:
+    type: string
+    label: Image ID
+    description: Image to be used for compute instance
+    default: ubuntu-16.04-server-cloudimg-amd64
+  flavour: 
+    type: string
+    description: Flavor of the image
+    default: m1.small
+  private_network:
+    type: string
+    label: Private network name
+    description: Network to attach instance to.
+    default: ProjectA-LSW1
+    
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      name: {get_param: name_instance}
+      image: {get_param: image_id }
+      flavor: {get_param: flavour}
+      networks: 
+        - network: {get_param: private_network}
+
+#outputs:
+#  instance_ip:
+#    description: IP address of the instance
+#    value : {get_attr: [my_instance, first address]}    
