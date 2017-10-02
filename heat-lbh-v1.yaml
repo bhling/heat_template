@@ -31,6 +31,5 @@ resources:
       name: {get_param: name_instance}
       image: {get_param: image_id }
       flavor: {get_param: flavour}
-      networks: 
-        - network: {get_param: private_network}
+      
     
