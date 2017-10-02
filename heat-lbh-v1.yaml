@@ -35,4 +35,4 @@ resources:
 outputs:
   instance_ip:
     description: IP address of the instance
-    value : {get_attr: [my_instance, first address]}  
+    value : {get_attr: [my_instance, first_address]}  
