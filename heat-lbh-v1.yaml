@@ -33,8 +33,4 @@ resources:
       flavor: {get_param: flavour}
       networks: 
         - network: {get_param: private_network}
-
-#outputs:
-#  instance_ip:
-#    description: IP address of the instance
-#    value : {get_attr: [my_instance, first address]}    
+    
