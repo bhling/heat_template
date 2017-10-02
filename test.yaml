@@ -24,3 +24,12 @@ parameters:
       get them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2
       or http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2 .
     default: ubuntu-16.04-server-cloudimg-amd64
+
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      name: {get_param: name_instance}
+      image: {get_param: image_id }
+      flavor: {get_param: flavour}
+      
