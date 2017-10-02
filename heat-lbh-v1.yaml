@@ -8,6 +8,7 @@ parameters:
     type: string
     label: Name of Instance
     description: Name of Instance
+    default: lbh-vm1
   image_id:
     type: string
     label: Image ID
